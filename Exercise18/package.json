@@ -1,0 +1,17 @@
+{
+  "name": "exercise18",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "collectCoverage":true
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "25.5.4"
+  }
+}

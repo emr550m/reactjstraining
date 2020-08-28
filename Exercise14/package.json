@@ -1,0 +1,33 @@
+{
+  "name": "exercise14",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "hot": "webpack-dev-server --hot --inline --config=webpack.config-hot.js",
+    "start": "webpack-dev-server --hot --inline --config=webpack.config-hot.js",
+    "bundle": "npx webpack"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-jss": "^10.4.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.1",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-react": "^7.10.4",
+    "@hot-loader/react-dom": "^16.13.0",
+    "babel-loader": "^8.1.0",
+    "react-hot-loader": "^4.12.21",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
