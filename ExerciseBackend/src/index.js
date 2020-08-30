@@ -1,11 +1,33 @@
 const express = require('express')
 var bodyParser = require('body-parser');
 var cors = require('cors')
+const crypto = require("crypto");
 
 const app = express()
 app.use(bodyParser.json());
 app.options('*', cors())
 app.use(cors())
+
+app.use("/api/login", function (request, response) {
+    var result = {
+        success: true,
+        message: "success",
+        token:  ""
+    }
+    var { username, password } = request.body;
+    if (username != null && password != null) {
+        if (username === "user" &&  password === "123456") {
+            result.token =crypto.randomBytes(16).toString("hex");
+        } else {
+            result.success = false;
+            result.message = "invalid login";
+        }
+    } else {
+        result.success = false;
+        result.message = "no username or password";
+    }
+    response.json(result);
+});
 
 app.use("/api/add", function (request, response) {
     var result = {

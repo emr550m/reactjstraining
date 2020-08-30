@@ -15,7 +15,7 @@ const render = (Component) => {
  
 
 if (module.hot) {
-    module.hot.accept('./index', () => { render(App) })
+    module.hot.accept()
 }
 
 

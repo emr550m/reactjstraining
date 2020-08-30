@@ -1,9 +1,9 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import {NameSurname} from "../src/components/namesurname";
+import {InputBox} from "../../src/components/inputbox";
 
 
-
+/*
 test('name surname snopshot test', () => {
     const component = renderer.create(
       <NameSurname Name="Emrah" Surname="Öz" />,
@@ -14,5 +14,5 @@ test('name surname snopshot test', () => {
     console.log(tree)
     
 });
-
+*/
 
