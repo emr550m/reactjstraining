@@ -34,24 +34,33 @@ describe("InputBox should ", () => {
   test('render given value prop correctly', () => {
     var valueInput = "user";
 
-    let component = create(<InputBox label="Username" value={valueInput} onChange={(e) => {}} type="text" />);
-
+    let component;
+    act(() => {
+      component = create(<InputBox label="Username" value={valueInput} onChange={(e) => { }} type="text" />);
+    });
     var inputObject = component.root.findByType("input");
     expect(inputObject.props.value).toBe("user");
+
+    act(() => {
+      valueInput = "user2";
+      component.update(<InputBox label="Username" value={valueInput} onChange={(e) => { }} type="text" />)
+    });
+    expect(inputObject.props.value).toBe("user2");
+
   });
 
   test('fire onchange on inputchange', () => {
     var valueInput = "user";
 
-    function onChange(e){
-        valueInput=e;
+    function onChange(e) {
+      valueInput = e;
     }
 
     let component = create(<InputBox label="Username" value={valueInput} onChange={onChange} type="text" />);
-   
+
     var inputObject = component.root.findByType("input");
     expect(inputObject.props.onChange).toBe(onChange);
- 
+
     inputObject.props.onChange("newValue");
 
     inputObject = component.root.findByType("input");
